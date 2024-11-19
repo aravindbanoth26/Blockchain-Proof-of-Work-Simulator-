@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Proof-of-Work Simulator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blockchain Proof-of-Work Simulator</h1>
+        </header>
+
+        <!-- Mining Settings Section -->
+        <section class="mining-settings">
+            <h2>Mining Simulation</h2>
+            <label for="dataInput">Transaction Data:</label>
+            <input type="text" id="dataInput" placeholder="Enter transaction data">
+
+            <label for="difficultyInput">Difficulty Level (1-10):</label>
+            <input type="number" id="difficultyInput" min="1" max="10" value="enter the level" placeholder="Enter difficulty level">
+
+            <label for="numMiners">Number of Miners:</label>
+            <input type="number" id="numMiners" min="3" max="10" value="enter the no.of minets" placeholder="Enter Number of miners">
+
+            <button class="btn" onclick="startMining()">Start Mining</button>
+            <button class="btn" id="stopMiningBtn" onclick="stopMining()" disabled>Stop Mining</button>
+        </section>
+
+        <!-- Network Visualization -->
+        <section class="network-visualization" id="visualization"></section>
+
+        <!-- Mining Status -->
+        <section class="status-box">
+            <h2>Mining Process</h2>
+            <p><strong>Input Data:</strong> <span id="inputData" class="highlight">---</span></p>
+            <p><strong>Attempts:</strong> <span id="nonce" class="highlight">0</span></p>
+            <p><strong>Nonce:</strong> <span id="attempts" class="highlight">0</span></p>
+            <p><strong>Hash Rate:</strong> <span id="hashRate" class="highlight">0</span> H/s</p>
+            <p><strong>Power Consumption:</strong> <span id="powerConsumption" class="highlight">0</span> </p>
+            <p><strong>Target Hash:</strong> <span id="targetHash" class="highlight">---</span></p>
+            <p><strong>Current Hash:</strong> <span id="currentHash" class="highlight">---</span></p>
+            <p><strong>Time Spent:</strong> <span id="timeSpent" class="highlight">0</span> min</p>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+            <p><strong>Status:</strong> <span id="miningStatus" class="highlight">Idle</span></p>
+        </section>
+
+        <!-- Blockchain Visualization -->
+        <section class="blockchain-visualization">
+            <h2>Blockchain</h2>
+            <div id="blockchain" class="blockchain"></div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+</html>

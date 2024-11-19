@@ -1,0 +1,260 @@
+/* Reset and General Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1b2a38;
+    color: #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #2c3e50;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 900px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    color: #3498db;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.mining-settings {
+    background-color: #34495e;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.mining-settings label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+.mining-settings input[type="text"],
+.mining-settings input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #22313f;
+    color: #fff;
+}
+
+.btn {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #2980b9;
+}
+
+.btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+/* Network Visualization */
+.network-visualization {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin: 20px 0;
+    background-color: #1b2a38;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    align-items: center;
+}
+
+.miner {
+    width: 80px;
+    height: 80px;
+    background-color: #e67e22;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+    border: 3px solid #34495e;
+    transition: transform 0.3s ease;
+    text-align: center;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.miner:hover {
+    transform: scale(1.1);
+    background-color: #e74c3c;
+}
+
+/* Status Box */
+.status-box {
+    background-color: #34495e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.status-box h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.status-box p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.status-box .highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #394237;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #43963d;
+    width: 0; /* Initial width is 0 */
+    transition: width 0.7s ease;
+}
+
+
+/* Blockchain Visualization */
+.blockchain-visualization {
+    margin-top: 20px;
+}
+
+.blockchain {
+    display: flex;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 15px;
+}
+
+/* General Styling for the Blockchain Blocks */
+.block {
+width: 350px; /* Fixed width */
+height: 300px; /* Fixed height for uniformity */
+background-color: #2c3e50; /* Slightly darker background for contrast */
+color: #ecf0f1; /* Lighter text for better readability */
+border-radius: 10px; /* Rounded corners for a modern look */
+padding: 20px; /* Padding for spacing */
+text-align: left; /* Align text to the left */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+transition: transform 0.3s ease; /* Smooth hover effect */
+display: flex;
+flex-direction: column;
+justify-content: space-between; /* Space out the content */
+gap: 10px; /* Even spacing between elements */
+overflow: hidden; /* Hide overflow content */
+}
+
+/* Add hover effect for blocks */
+.block:hover {
+transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Consistent spacing and line height for text */
+.block p {
+margin: 5px 0; /* Consistent spacing between paragraphs */
+font-size: 1em; /* Slightly larger text for readability */
+line-height: 1.4; /* Improved line height for spacing */
+}
+
+/* Strong text for labels */
+.block strong {
+font-weight: bold; /* Emphasize labels */
+color: #1abc9c; /* Green color for labels */
+}
+
+/* Hash Box Styling */
+.hash-box {
+
+padding: 10px; /* Padding for better spacing */
+border-radius: 5px; /* Rounded corners for modern look */
+font-size: 0.8em; /* Smaller font for hash values */
+word-wrap: break-word; /* Ensure long hashes wrap */
+overflow-wrap: break-word; /* Compatibility for all browsers */
+overflow: hidden; /* Prevent overflow */
+line-height: 1.2; /* Better spacing for wrapped lines */
+}
+
+/* Different colors for current and previous hashes */
+.hash-box.current-hash {
+color: #3498db; /* Blue for current hash */
+}
+
+.hash-box.previous-hash {
+color: #e74c3c; /* Red for previous hash */
+}
+
+/* Blockchain Container Styling */
+.blockchain {
+display: flex;
+flex-wrap: wrap; /* Wrap blocks to the next row */
+gap: 20px; /* Space between blocks */
+justify-content: center; /* Center the blocks */
+align-items: flex-start; /* Align blocks at the top */
+padding: 20px; /* Padding around the container */
+background-color: #1b2a38; /* Slightly darker background for the container */
+border-radius: 10px; /* Rounded corners for the container */
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+@keyframes shake {
+0% { transform: translate(0px, 0px); }
+25% { transform: translate(2px, -2px); }
+50% { transform: translate(-2px, 2px); }
+75% { transform: translate(2px, 2px); }
+100% { transform: translate(0px, 0px); }
+}
+
+.miner.shaking {
+animation: shake 0.5s infinite; /* Shake effect with infinite looping */
+}
+
+
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
